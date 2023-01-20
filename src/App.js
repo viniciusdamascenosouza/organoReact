@@ -7,7 +7,7 @@ function App() {
       <Banner/>
       <CampoTexto label="Nome" placeholder="Digite seu nome aqui..."/>
       <CampoTexto label="Cargo" placeholder="Digite seu cargo..."/>
-      <CampoTexto label="Imagem" placeholder="Inform o endereço da imagem..."/>
+      <CampoTexto label="Imagem" placeholder="Informe o endereço da imagem..."/>
     </div>
   );
 }
