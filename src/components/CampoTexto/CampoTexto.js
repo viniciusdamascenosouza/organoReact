@@ -2,7 +2,10 @@ import './CampoTexto.css'
 
 const CampoTexto = () => {
     return(
-        <h1>Olá, Mundo!</h1>
+        <div className='campo-texto'>
+            <label placeholder='Digite seu nome'>Nome</label>
+            <input />
+        </div>
     )
 }
 
