@@ -15,7 +15,7 @@ const Formulario = () => {
 
     const aoSalvar = (evento) => {
         evento.preventDefault()
-        console.log('Form foi submetido')
+        console.log('Formulário foi submetido')
     }
 
     return (
