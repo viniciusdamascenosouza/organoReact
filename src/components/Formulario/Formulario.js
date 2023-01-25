@@ -1,27 +1,27 @@
-import './Formulario.css'
-import CampoTexto from '../CampoTexto/CampoTexto'
-import ListaSuspensa from '../ListaSuspensa/ListaSuspensa'
-import Botao from '../botao/Botao'
-import { useState } from 'react'
+import "./Formulario.css";
+import CampoTexto from "../CampoTexto/CampoTexto";
+import ListaSuspensa from "../ListaSuspensa/ListaSuspensa";
+import Botao from "../botao/Botao";
+import { useState } from "react";
 
 const Formulario = () => {
-
     const times = [
-        'Programação',
-        'Front-end',
-        'Data Science',
-        'DevOps',
-        'UX e Design',
-    ]
+        "Programação",
+        "Front-end",
+        "Data Science",
+        "DevOps",
+        "UX e Design",
+    ];
 
-    const [nome, setNome] = useState('')
-    const [cargo, setCargo] = useState('')
-    const [imagem, setImagem] = useState('')
+    const [nome, setNome] = useState("");
+    const [cargo, setCargo] = useState("");
+    const [imagem, setImagem] = useState("");
+    const [time, setTime] = useState("");
 
     const aoSalvar = (evento) => {
-        evento.preventDefault()
-        console.log('Formulário foi submetido =>', nome, cargo, imagem)
-    }
+        evento.preventDefault();
+        console.log("Formulário foi submetido =>", nome, cargo, imagem, time);
+    };
 
     return (
         <section className="formulario">
@@ -29,29 +29,35 @@ const Formulario = () => {
                 <h2>Preencha os dados para criar o card do colaborador.</h2>
                 <CampoTexto
                     obrigatorio="true"
-                    label="Nome" 
+                    label="Nome"
                     placeholder="Digite seu nome aqui..."
                     valor={nome}
-                    aoAlterado={valor => setNome(valor)}
+                    aoAlterado={(valor) => setNome(valor)}
                 />
-                <CampoTexto 
-                    obrigatorio="true" 
-                    label="Cargo" 
-                    placeholder="Digite seu cargo..." 
+                <CampoTexto
+                    obrigatorio="true"
+                    label="Cargo"
+                    placeholder="Digite seu cargo..."
                     valor={cargo}
-                    aoAlterado={valor => setCargo(valor)}
+                    aoAlterado={(valor) => setCargo(valor)}
                 />
-                <CampoTexto 
+                <CampoTexto
                     label="Imagem"
-                    placeholder="Informe o endereço da imagem..." 
+                    placeholder="Informe o endereço da imagem..."
                     valor={imagem}
-                    aoAlterado={valor => setImagem(valor)}
+                    aoAlterado={(valor) => setImagem(valor)}
                 />
-                <ListaSuspensa obrigatorio="true" label="Times" itens={times}/>
+                <ListaSuspensa 
+                    obrigatorio="true" 
+                    label="Times" 
+                    itens={times} 
+                    valor={time}
+                    aoAlterado={(valor) => setTime(valor)}
+                />
                 <Botao>Criar Card</Botao>
             </form>
         </section>
-    )
-}
+    );
+};
 
-export default Formulario
+export default Formulario;
